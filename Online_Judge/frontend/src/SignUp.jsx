@@ -57,7 +57,7 @@ function Signup(){
       navigate('/home');
     } catch (error) {
       console.error('Signup error:', error);
-      setErrorMessage('An error occurred. Please try again.');      //it is catching error put it is updated on cloud and backend 
+      setErrorMessage('An error occurred. Please try again.');      //it is catching error but it is updated on cloud and backend 
     }
   };
 
