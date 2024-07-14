@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // For navigation
 import './SignUp.css'
+import Cookies from 'js-cookie'
+import axios from 'axios';
 
 function Signup(){
   const [formData, setFormData] = useState({
@@ -13,6 +15,8 @@ function Signup(){
 
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+
+  const navigate = useNavigate();  
 
   const handleChange = (event) => {
     setFormData({
@@ -28,37 +32,29 @@ function Signup(){
       setErrorMessage('Passwords do not match!');
       return; 
     }
-
-    // try {
-    //     const response = await axios.post('/http://localhost:8000/register', formData); // Replace with your actual API endpoint
-  
-    //     setSuccessMessage(response.data.message); // Assuming "message" is the key for success message in response
-    //     setFormData({ firstname: '', lastname: '', email: '', password: '' }); // Clear form after successful signup
-    //   } catch (error) {
-    //     if (error.response) {
-    //       setErrorMessage(error.response.data); // Assuming the error message is in the response data
-    //     } else {
-    //       setErrorMessage('Network error occurred. Please try again.');
-    //     }
-    //   }
     try {
 
-      const response = await fetch('http://localhost:8000/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-      setSuccessMessage(response.ok)
-      if (response.ok) {
-        const data = await response.json();
-        setSuccessMessage(response.data.message);
-        console.log('Signup successful:', data); 
-        // const navigate = useNavigate();                         
-        // navigate('/login'); 
-      } else {
-        const errorData = await response.json();
-        setErrorMessage('Signup failed!');
-      }
+      // const response = await fetch('http://localhost:8000/register', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(formData),
+      // });
+      // setSuccessMessage(response.ok)
+      // if (response.ok) {
+      //   const data = await response.json();
+      //   setSuccessMessage(response.data.message);
+      //   console.log('Signup successful:', data); 
+      //   const navigate = useNavigate();                         
+      //   navigate('/login'); 
+      // } else {
+      //   const errorData = await response.json();
+      //   setErrorMessage('Signup failed!');
+      // }
+
+      const response = await axios.post('http://localhost:8000/register', formData);
+      console.log(response.data.token);
+      Cookies.set('authToken', response.data.token);
+      navigate('/home');
     } catch (error) {
       console.error('Signup error:', error);
       setErrorMessage('An error occurred. Please try again.');      //it is catching error put it is updated on cloud and backend 
@@ -70,6 +66,7 @@ function Signup(){
       <h1>Signup - Avast Ye!</h1>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
       {successMessage && <p className="error-message">{successMessage}</p>}
+      <center>
       <form onSubmit={handleSubmit}>
         <label htmlFor="firstName">First Name:</label>
         <input
@@ -118,8 +115,10 @@ function Signup(){
         />
         <button type="submit">Hoist the Colors!</button>
       </form>
-      {/* <Link to="/admin/login">L/ogin to Administrator Account</Link> */}
-      {/* <Link to="/sign-in">Login to Yer Ship</Link> */}
+      <a href="/login">
+        <button type = "nav">Board yor Ship!!!</button>
+      </a>
+      </center>
     </div>
   );
 };

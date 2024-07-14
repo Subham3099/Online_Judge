@@ -71,11 +71,27 @@ button[type="submit"] {
     transition: all 0.3s ease;
 }
 
-a {
-    font-size: 1.8rem;
-    text-decoration: none;
-    color: #f2b705;
-    text-shadow: 1px 1px 2px #000;
+button[type="nav"]{
+    font-size: 1rem;
+    background-color: #f2b705;
+    color: #0e182a;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 0rem;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+button[type="nav2"]{
+    font-size: 1rem;
+    background-color: #f2b705;
+    color: #0e182a;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 5rem;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 

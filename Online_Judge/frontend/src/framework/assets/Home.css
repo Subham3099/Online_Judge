@@ -1,0 +1,148 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+}
+
+.top-bar {
+    background-color: #27042e;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 25%;
+    width: 50%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+    border: 2px black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* Optional padding */
+}
+
+.top-bar .left,
+.top-bar .right {
+    display: flex;
+}
+
+.top-bar a {
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.top-bar a:hover {
+    background-color: #d39116;
+    color: black;
+}
+
+/* Add some padding to the body to avoid content being hidden under the top bar */
+.content {
+    padding-top: 60px;
+    /* Adjust based on the height of the top bar */
+}
+
+.announcement-list {
+    width: 90vw;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #3a065f;
+    border: 2px solid #d39116;
+    /* White golden border */
+    border-radius: 10px;
+    border: 2px black;
+    color: rgb(255, 255, 255);
+    /* Text color to white for better contrast */
+}
+
+.announcement-list h2 {
+    text-align: center;
+    border: 2px black;
+    color: #d39116;
+    text-shadow: #27042e 2px;
+}
+
+.announcement-list-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.announcement-left,
+.announcement-right {
+    flex: 1;
+    padding: 10px;
+}
+
+.announcement-left {
+    margin-right: 10px;
+    /* Space between left and right */
+}
+
+.announcement-right {
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.announcement-item {
+    width: 500px;
+    border: 1px solid #cec328;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    transition: transform 0.3s, background-color 0.3s;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    border: 2px black;
+}
+
+.announcement-item:hover {
+    background-color: #f9f9f9;
+}
+
+.announcement-item:hover {
+    background-color: #f9f9f9;
+    transform: scale(1.005);
+}
+
+.announcement-item h3 {
+    margin: 0;
+    cursor: pointer;
+    color: #40a767;
+}
+
+
+.announcement-item p {
+  margin: 5px 0 0 0;
+  color: #555;
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis */
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 2;
+}
+
+.announcement-item p:hover {
+    margin: 5px 0 0 0;
+    color: #555;
+}
+
+.announcement-detail h3 {
+    margin: 0;
+    color: #333;
+}
+
+.announcement-detail p {
+   
+    color: #555;
+}

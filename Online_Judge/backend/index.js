@@ -101,7 +101,7 @@ app.post("/login",async (req,res)=>{
         res.status(200).cookie("token",token,options).json({
             message:"Login Successful",
             success: true,
-            token
+            token:token
         })
 
     }catch(error){
