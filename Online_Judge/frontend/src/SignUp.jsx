@@ -63,7 +63,7 @@ function Signup(){
 
   return (
     <div className="signup-form">
-      <h1>Signup - Avast Ye!</h1>
+      <h1>Register your Ship - Avast Ye!</h1>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
       {successMessage && <p className="error-message">{successMessage}</p>}
       <center>
@@ -116,7 +116,7 @@ function Signup(){
         <button type="submit">Hoist the Colors!</button>
       </form>
       <a href="/login">
-        <button type = "nav">Board yor Ship!!!</button>
+        <button type = "nav">Board your Ship!!!</button>
       </a>
       </center>
     </div>

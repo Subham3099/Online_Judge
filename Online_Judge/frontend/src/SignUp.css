@@ -99,7 +99,6 @@ a:hover,
 button:hover {
     background-color: #ffe29a;
     color: #0e182a;
-    transform: scale(1.1);
     transition: all 0.3s ease;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }

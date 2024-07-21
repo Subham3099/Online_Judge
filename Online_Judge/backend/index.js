@@ -6,7 +6,10 @@ const jwt = require('jsonwebtoken')
 const dotenv = require('dotenv')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
-
+const {generateFile} = require("./generateFile.js")
+const {executeCpp} = require("./executeCpp.js")
+const { v4: uuid } = require('uuid')
+const path = require('path')
 const app = express()
 
 dotenv.config()
@@ -106,6 +109,26 @@ app.post("/login",async (req,res)=>{
 
     }catch(error){
         console.log("Login : "+ error.message)
+    }
+})
+
+app.post("/runtest",async (req,res)=>{
+    const {language,code,testcase} = req.body
+    if(code==undefined){
+        return res.status(400).json({success:false,message:"Empty code body!"})
+    }
+
+    try{
+        
+        const filePath = await generateFile(language,code,'codes','')
+        const jobId = path.basename(filePath).split(".")[0]
+        const testcasePath = await generateFile('txt',testcase,'outputs',jobId)
+        const output = await executeCpp(filePath,testcasePath)
+        console.log(output)
+        res.status(200).json({output : output})
+
+    }catch (error){
+        res.status(500).json({success:false,message:"Error: "+error.message})
     }
 })
 
