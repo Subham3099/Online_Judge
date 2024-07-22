@@ -29,7 +29,8 @@ form {
     justify-content: center;
     background-color: #1b314d;
     padding: 3rem;
-    border-radius: 1px;
+    border-radius: 10px;
+    border: 2px solid black;
     transform: scale(0.8);
     transform-origin: center top;
     margin-bottom:-7rem;
@@ -53,6 +54,8 @@ input[type="password"]{
     margin-bottom: 1.5rem;
     background-color: #ffe29a;
     color: #0e182a;
+    /* border-radius: 10px; */
+    border: 2px solid black;
     box-shadow: 2px 2px 3px #000;
     max-width: 500px;
     width: 100%;
@@ -66,6 +69,7 @@ button[type="submit"] {
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    border: 2px solid black;
     margin-top: 2rem;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
@@ -78,6 +82,7 @@ button[type="nav"]{
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    border: 2px solid black;
     margin-top: 0rem;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
@@ -91,6 +96,7 @@ button[type="nav2"]{
     border: none;
     cursor: pointer;
     margin-top: 5rem;
+    border: 2px solid black;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }

@@ -133,7 +133,7 @@ function ProblemDesc() {
                 </div>
             </div>
             <div className='body-content'>
-                <div className='left-part'>
+                <div className={(activeTab == 'result')?'left-part-grey':'left-part'}>
                     <div className="tab-buttons">
                         <button
                             onClick={() => setActiveTab('description')}
@@ -169,17 +169,13 @@ function ProblemDesc() {
                             </div>
                         )}
                         {activeTab === 'result' && (
-                            <div className='description'>
-                                <div className='heading'>
-                                    <h2 className='problem-heading'>Result </h2>
-                                </div>
-                                <div className='statement'>
-                                    <p>
-                                        <pre>
-                                            {result}
-                                        </pre>
-                                    </p>
-                                </div>
+                            <div className='output-result'>
+                                <p className='output-para'>
+                                    <pre>
+                                        {result === null ? "No output":result}
+                                    </pre>
+                                </p>
+
                             </div>
                         )}
                         {activeTab === 'testcase' && (
@@ -208,7 +204,7 @@ function ProblemDesc() {
                     </div>
                     <div className='code-input'>
                         <textarea
-                            tabIndex="1"
+                            onKeyDown={handleKeyDown}
                             spellCheck={false}
                             value={getCode()}
                             onChange={handleCodeChange}

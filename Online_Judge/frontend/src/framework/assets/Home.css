@@ -17,7 +17,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 2%;
-    border: 2px black;
+    border: 2px solid black;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     /* Optional padding */
@@ -47,16 +47,14 @@ body {
 }
 
 .announcement-list {
+    border: 2px solid black;
     width: 90vw;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     background-color: #3a065f;
-    border: 2px solid #d39116;
-    /* White golden border */
     border-radius: 10px;
-    border: 2px black;
     color: rgb(255, 255, 255);
     /* Text color to white for better contrast */
 }
@@ -71,15 +69,18 @@ body {
 .announcement-list-container {
     display: flex;
     justify-content: space-between;
+    
 }
 
-.announcement-left,
 .announcement-right {
     flex: 1;
     padding: 10px;
+    border: 2px solid black;
 }
 
 .announcement-left {
+    flex: 1;
+    padding: 10px;
     margin-right: 10px;
     /* Space between left and right */
 }
@@ -89,6 +90,7 @@ body {
     color: #333;
     border-radius: 5px;
     padding: 20px;
+    border: 2px solid black;
 }
 
 .announcement-item {
@@ -103,7 +105,7 @@ body {
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    border: 2px black;
+    border: 2px solid black;
 }
 
 .announcement-item:hover {

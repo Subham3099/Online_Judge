@@ -128,7 +128,7 @@ app.post("/runtest",async (req,res)=>{
         res.status(200).json({output : output})
 
     }catch (error){
-        res.status(500).json({success:false,message:"Error: "+error.message})
+        res.status(200).json({success:false,output:"Error: "+error.message})
     }
 })
 
